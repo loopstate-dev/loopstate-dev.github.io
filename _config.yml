@@ -18,16 +18,11 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: loopstate.dev
+
 email: cmcfee@kent.edu
-description: >- # this means to ignore newlines until "baseurl:"
-  _Code. Flow. Repeat._
-  Welcome to *loopstate.dev*, a creative space where DevOps engineering, 
-  clean code, music-fueled flow states, and gaming culture intersect. 
-  Run by a DevOps Director with a passion for automation, cloud systems, 
-  and creative tech, this site shares insights through blog posts, tools,
-  and short-form videos designed to inspire and connect. Whether you’re 
-  shipping to prod or syncing to a new playlist, you’re in the loop.
+title: loopstate.dev
+description: >
+  Welcome to loopstate.dev, a creative space where DevOps engineering, clean code, music-fueled flow states, and gaming culture intersect. Run by a DevOps Director with a passion for automation, cloud systems, and creative tech, this site shares insights through blog posts, tools, and short-form videos designed to inspire and connect. Whether you're shipping to prod or syncing to a new playlist, you're in the loop.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
