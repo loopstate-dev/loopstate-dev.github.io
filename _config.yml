@@ -21,6 +21,7 @@
 
 email: cmcfee@kent.edu
 title: loopstate.dev
+tagline: Code. Flow. Repeat. 
 description: >
   Welcome to loopstate.dev, a creative space where DevOps engineering, clean code, music-fueled flow states, and gaming culture intersect. Run by a DevOps Director with a passion for automation, cloud systems, and creative tech, this site shares insights through blog posts, tools, and short-form videos designed to inspire and connect. Whether you're shipping to prod or syncing to a new playlist, you're in the loop.
 baseurl: "" # the subpath of your site, e.g. /blog
