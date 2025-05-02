@@ -6,7 +6,7 @@ description: >-
   who loves to code and curate playlists. Join me in exploring container orchestration,
   infrastructure automation, and the perfect soundtrack for deep work.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://loopstate-dev.github.io" # the base hostname & protocol
+url: "https://loopstate.dev" # the base hostname & protocol
 logo: /assets/images/loopstate-icon.png
 tagline: code. flow. repeat.
 author: Chris McFee
