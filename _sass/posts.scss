@@ -1,0 +1,347 @@
+// Blog post styles
+
+.post-header {
+  margin-bottom: $spacing-2xl;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post-title {
+  margin-bottom: $spacing-md;
+  font-size: $font-size-4xl;
+  font-weight: 800;
+  
+  @media (min-width: $breakpoint-md) {
+    font-size: $font-size-5xl;
+  }
+}
+
+.post-meta {
+  color: $color-gray;
+  margin-bottom: $spacing-lg;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: $spacing-md;
+  font-size: $font-size-sm;
+  
+  .post-date, .post-reading-time, .post-author {
+    display: flex;
+    align-items: center;
+    
+    svg {
+      width: 16px;
+      height: 16px;
+      margin-right: $spacing-xs;
+    }
+  }
+}
+
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: $spacing-xs;
+  margin-top: $spacing-md;
+}
+
+.post-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-bottom: $spacing-2xl;
+  
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: $spacing-2xl;
+    margin-bottom: $spacing-lg;
+  }
+  
+  h2 {
+    font-size: $font-size-3xl;
+  }
+  
+  h3 {
+    font-size: $font-size-2xl;
+  }
+  
+  p {
+    margin-bottom: $spacing-lg;
+    font-size: $font-size-lg;
+    line-height: 1.7;
+  }
+  
+  ul, ol {
+    margin-bottom: $spacing-lg;
+    padding-left: $spacing-lg;
+    
+    li {
+      margin-bottom: $spacing-sm;
+    }
+  }
+  
+  img {
+    margin: $spacing-xl auto;
+    display: block;
+    max-width: 100%;
+    border-radius: $border-radius-md;
+  }
+  
+  blockquote {
+    margin: $spacing-xl 0;
+    padding: $spacing-md $spacing-lg;
+    border-left: 4px solid $color-secondary;
+    background: rgba($color-secondary, 0.05);
+    font-style: italic;
+    
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  .embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    margin: $spacing-xl 0;
+    
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: $border-radius-md;
+    }
+  }
+}
+
+.post-navigation {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-lg;
+  margin-top: $spacing-xxl;
+  
+  @media (max-width: $breakpoint-sm) {
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
+  }
+  
+  .nav-previous,
+  .nav-next {
+    padding: $spacing-md;
+    background-color: $color-light;
+    border-radius: $border-radius-md;
+    transition: $transition-normal;
+    
+    .dark-mode & {
+      background-color: lighten($color-dark, 5%);
+    }
+    
+    &:hover {
+      background-color: darken($color-light, 5%);
+      
+      .dark-mode & {
+        background-color: lighten($color-dark, 10%);
+      }
+    }
+  }
+  
+  .nav-label {
+    font-size: $font-size-sm;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: $spacing-xs;
+    color: $color-text-muted;
+  }
+  
+  .nav-next {
+    text-align: right;
+  }
+}
+
+// Table of contents
+.toc {
+  background: rgba($color-primary, 0.05);
+  border-radius: $border-radius-md;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-xl;
+  
+  .toc-title {
+    font-size: $font-size-lg;
+    font-weight: 600;
+    margin-bottom: $spacing-md;
+    color: $color-primary;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding-left: $spacing-md;
+    
+    li {
+      margin-bottom: $spacing-sm;
+      
+      a {
+        color: $color-dark;
+        transition: $transition-fast;
+        border-left: 2px solid transparent;
+        padding-left: $spacing-sm;
+        display: block;
+        
+        .dark-mode & {
+          color: $color-light;
+        }
+        
+        &:hover, &.active {
+          color: $color-primary;
+          border-left-color: $color-primary;
+        }
+      }
+      
+      ul {
+        margin-top: $spacing-sm;
+      }
+    }
+  }
+}
+
+// Posts grid for homepage and blog page
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: $spacing-xl;
+  margin-bottom: $spacing-xl;
+  margin-top: $spacing-xl;
+  
+  @media (max-width: $breakpoint-sm) {
+    grid-template-columns: 1fr;
+    gap: $spacing-lg;
+  }
+  
+  @media (min-width: $breakpoint-sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (min-width: $breakpoint-lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  // Ensure cards have proper visibility
+  .card {
+    border: 1px solid transparent;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    opacity: 1 !important; // Force visibility
+    
+    .dark-mode & {
+      border-color: #374151;
+    }
+    
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    // Ensure text visibility in both light and dark modes
+    .card-content {
+      z-index: 2;
+      position: relative;
+    }
+  }
+}
+
+// Single post page styles
+.post {
+  margin-bottom: $spacing-xxl;
+  
+  .post-header {
+    margin-bottom: $spacing-xl;
+    text-align: center;
+  }
+  
+  .post-title {
+    font-size: $font-size-xxl;
+    margin-bottom: $spacing-sm;
+  }
+  
+  .post-meta {
+    color: $color-text-muted;
+    margin-bottom: $spacing-md;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: $spacing-md;
+    
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: $spacing-xs;
+      
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+  
+  .post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: $spacing-sm;
+  }
+  
+  .post-content {
+    max-width: 800px;
+    margin: 0 auto;
+    
+    img {
+      max-width: 100%;
+      border-radius: $border-radius-md;
+      margin: $spacing-lg 0;
+    }
+  }
+}
+
+// Pagination
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: $spacing-2xl;
+  
+  .page-item {
+    margin: 0 $spacing-xs;
+    
+    .page-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: $border-radius-full;
+      background: transparent;
+      color: $color-gray;
+      font-weight: 500;
+      transition: $transition-fast;
+      
+      &:hover {
+        background: rgba($color-primary, 0.1);
+        color: $color-primary;
+      }
+      
+      &.active {
+        background: $color-primary;
+        color: white;
+      }
+      
+      &.disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        pointer-events: none;
+      }
+    }
+  }
+}

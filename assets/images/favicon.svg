@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .loop {
+      fill: none;
+      stroke-width: 8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: stroke-dashoffset 1s ease-in-out;
+    }
+    .loop1 { 
+      stroke: #4F46E5;
+      stroke-dasharray: 220;
+      stroke-dashoffset: 0; 
+    }
+    .loop2 { 
+      stroke: #8B5CF6; 
+      stroke-dasharray: 180;
+      stroke-dashoffset: 90;
+    }
+  </style>
+  <circle cx="50" cy="50" r="45" fill="#1F2937"/>
+  <path class="loop loop1" d="M30,30 C20,45 20,55 30,70 C40,85 60,85 70,70 C80,55 80,45 70,30 C60,15 40,15 30,30 Z" />
+  <path class="loop loop2" d="M40,40 C35,45 35,55 40,60 C45,65 55,65 60,60 C65,55 65,45 60,40 C55,35 45,35 40,40 Z" />
+</svg>

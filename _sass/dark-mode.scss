@@ -1,0 +1,215 @@
+// Dark mode styles
+
+body.dark-mode {
+  color: $color-light;
+  background-color: $color-dark;
+  
+  // Text and links
+  a {
+    color: lighten($color-primary, 10%);
+    
+    &:hover {
+      color: lighten($color-primary, 20%);
+    }
+  }
+  
+  // General elements
+  hr {
+    background: #374151;
+  }
+  
+  code, pre {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  th, td {
+    border-color: #374151;
+  }
+  
+  th {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  blockquote {
+    color: #9CA3AF;
+  }
+  
+  // Form elements
+  input, textarea, select {
+    background-color: #1F2937;
+    border-color: #374151;
+    color: $color-light;
+    
+    &:focus {
+      border-color: lighten($color-primary, 10%);
+    }
+  }
+  
+  ::placeholder {
+    color: #6B7280;
+  }
+  
+  // Header
+  header {
+    background-color: rgba(17, 24, 39, 0.8);
+    border-bottom-color: #1F2937;
+    
+    .nav-menu {
+      background-color: rgba(17, 24, 39, 0.8);
+    }
+    
+    .nav-item a {
+      color: #E5E7EB;
+      
+      &:hover, &.active {
+        color: $color-primary;
+      }
+    }
+    
+    .menu-toggle span {
+      background-color: #E5E7EB;
+    }
+  }
+  
+  // Footer
+  footer {
+    background-color: #111827;
+    color: #E5E7EB;
+    border-top-color: #1F2937;
+  }
+  
+  // Cards
+  .card {
+    background-color: #1F2937;
+    border-color: #374151;
+    
+    .card-title a {
+      color: $color-light;
+      
+      &:hover {
+        color: $color-primary;
+      }
+    }
+    
+    .card-meta {
+      color: #9CA3AF;
+    }
+  }
+  
+  // Hero section
+  .hero {
+    background-color: #111827;
+  }
+  
+  // Buttons
+  .hero-btn {
+    &.primary {
+      background-color: $color-primary;
+      
+      &:hover {
+        background-color: lighten($color-primary, 5%);
+      }
+    }
+    
+    &.secondary {
+      background-color: transparent;
+      border-color: #4B5563;
+      color: #E5E7EB;
+      
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+    }
+  }
+  
+  // Tags
+  .tag {
+    background-color: rgba($color-primary-r, $color-primary-g, $color-primary-b, 0.2);
+  }
+  
+  // Background utility classes
+  .bg-light {
+    background-color: #1F2937;
+  }
+  
+  .bg-dark {
+    background-color: #111827;
+  }
+  
+  // Text colors
+  .text-dark {
+    color: $color-light;
+  }
+  
+  .text-light {
+    color: $color-dark;
+  }
+  
+  .text-muted {
+    color: #9CA3AF;
+  }
+  
+  // Theme toggle button
+  .theme-toggle {
+    color: #E5E7EB;
+  }
+  
+  // Pagination
+  .pagination {
+    .page-link {
+      background-color: #1F2937;
+      border-color: #374151;
+      color: #E5E7EB;
+      
+      &:hover {
+        background-color: rgba($color-primary-r, $color-primary-g, $color-primary-b, 0.2);
+      }
+      
+      &.active {
+        background-color: $color-primary;
+        color: $color-light;
+        border-color: $color-primary;
+      }
+      
+      &.disabled {
+        color: #6B7280;
+      }
+    }
+  }
+}
+
+// Theme toggle styles
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 1rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-dark;
+  
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+#sun-icon {
+  display: block;
+}
+
+#moon-icon {
+  display: none;
+}
+
+.dark-mode {
+  #sun-icon {
+    display: none;
+  }
+  
+  #moon-icon {
+    display: block;
+  }
+}

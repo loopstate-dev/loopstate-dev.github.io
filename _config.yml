@@ -7,12 +7,12 @@ description: >-
   infrastructure automation, and the perfect soundtrack for deep work.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://loopstate-dev.github.io" # the base hostname & protocol
-logo: /assets/images/favicon.svg
+logo: /assets/images/loopstate-icon.png
 tagline: code. flow. repeat.
 author: Chris McFee
 
 # Theme settings
-favicon: /assets/images/favicon.svg
+favicon: /assets/images/loopstate-icon.png
 dark_mode: false # dark mode by default?
 
 # SEO settings

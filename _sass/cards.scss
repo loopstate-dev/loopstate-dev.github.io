@@ -1,0 +1,196 @@
+// Card styles for blog posts, projects, and playlists
+
+.card {
+  background-color: white;
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  opacity: 1 !important; /* Force visibility regardless of animation state */
+  visibility: visible !important; /* Ensure always visible */
+  
+  .dark-mode & {
+    background-color: lighten($color-dark, 3%);
+    border: 1px solid #374151;
+  }
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    
+    .card-image img {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.card-image {
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; // 16:9 aspect ratio
+  position: relative;
+  overflow: hidden;
+  
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+}
+
+.card-content {
+  padding: $spacing-lg;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-size: $font-size-xl;
+  margin-bottom: $spacing-sm;
+  
+  a {
+    color: $color-dark;
+    transition: $transition-fast;
+    
+    .dark-mode & {
+      color: $color-light;
+    }
+    
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
+
+.card-meta {
+  display: flex;
+  align-items: center;
+  color: $color-gray;
+  font-size: $font-size-sm;
+  margin-bottom: $spacing-md;
+  flex-wrap: wrap;
+  gap: $spacing-sm;
+  
+  .meta-item {
+    display: flex;
+    align-items: center;
+    
+    svg {
+      width: 16px;
+      height: 16px;
+      margin-right: $spacing-xs;
+    }
+  }
+}
+
+.card-excerpt {
+  margin-bottom: $spacing-md;
+  font-size: $font-size-base;
+  color: $color-gray;
+  flex-grow: 1;
+}
+
+.card-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.read-more {
+  font-weight: 600;
+  font-size: $font-size-sm;
+  color: $color-primary;
+  display: flex;
+  align-items: center;
+  
+  svg {
+    width: 16px;
+    height: 16px;
+    margin-left: $spacing-xs;
+    transition: transform 0.2s ease;
+  }
+  
+  &:hover {
+    svg {
+      transform: translateX(3px);
+    }
+  }
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-xs;
+}
+
+.tag {
+  font-size: $font-size-xs;
+  padding: 4px 10px;
+  background: rgba($color-primary, 0.1);
+  color: $color-primary;
+  border-radius: $border-radius-full;
+  transition: $transition-fast;
+  
+  .dark-mode & {
+    background: rgba($color-primary, 0.2);
+  }
+  
+  &:hover {
+    background: rgba($color-primary, 0.2);
+    transform: translateY(-2px);
+  }
+}
+
+// Featured card 
+.card-featured {
+  display: grid;
+  grid-template-columns: 1fr;
+  
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .card-image {
+    height: 100%;
+    padding-bottom: 0;
+  }
+}
+
+// Playlist card
+.playlist-card {
+  .card-header {
+    position: relative;
+    padding-bottom: 56.25%; // 16:9 ratio
+    overflow: hidden;
+  }
+  
+  .playlist-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba($color-dark, 0.7);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    
+    svg {
+      width: 24px;
+      height: 24px;
+      color: white;
+    }
+  }
+}

@@ -1,0 +1,143 @@
+---
+layout: default
+---
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="hero-title">{{ site.title | escape }}</h1>
+      <p class="hero-tagline animate-tagline">{{ site.tagline | escape }}</p>
+      <div class="hero-description">
+        {{ page.description | default: site.description }}
+      </div>
+      <div class="hero-btns">
+        <a href="{{ site.baseurl }}/blog" class="hero-btn primary">read blog</a>
+        <a href="{{ site.baseurl }}/about" class="hero-btn secondary">about me</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% if site.posts.size > 0 %}
+<section class="content-wrapper">
+  <div class="container">
+    <h2 class="text-gradient mb-lg">recent posts</h2>
+    <div class="posts-grid">
+      {% for post in site.posts limit:3 %}
+        <div class="card stagger-item">
+          {% if post.image %}
+          <div class="card-image">
+            <a href="{{ post.url | relative_url }}">
+              <img src="{{ post.image | relative_url }}" alt="{{ post.title | escape }}">
+            </a>
+          </div>
+          {% endif %}
+          <div class="card-content">
+            <h3 class="card-title">
+              <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+            </h3>
+            <div class="card-meta">
+              <div class="meta-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                <time datetime="{{ post.date | date_to_xmlschema }}">
+                  {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
+                  {{ post.date | date: date_format }}
+                </time>
+              </div>
+            </div>
+            <div class="card-excerpt">
+              {{ post.excerpt | strip_html | truncatewords: 30 }}
+            </div>
+            <div class="card-footer">
+              <a href="{{ post.url | relative_url }}" class="read-more">
+                read more
+              </a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% if site.projects and site.projects.size > 0 %}
+<section class="section bg-light">
+  <div class="container">
+    <h2 class="text-gradient mb-lg">featured projects</h2>
+    <div class="three-column">
+      {% for project in site.projects limit:3 %}
+        <div class="card stagger-item">
+          {% if project.image %}
+          <div class="card-image">
+            <a href="{{ project.url | relative_url }}">
+              <img src="{{ project.image | relative_url }}" alt="{{ project.title | escape }}">
+            </a>
+          </div>
+          {% endif %}
+          <div class="card-content">
+            <h3 class="card-title">
+              <a href="{{ project.url | relative_url }}">{{ project.title | escape }}</a>
+            </h3>
+            <div class="card-excerpt">
+              {{ project.excerpt | strip_html | truncatewords: 20 }}
+            </div>
+            <div class="card-footer">
+              <a href="{{ project.url | relative_url }}" class="read-more">
+                view project
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% if site.playlists and site.playlists.size > 0 %}
+<section class="section">
+  <div class="container">
+    <h2 class="text-gradient mb-lg">playlists</h2>
+    <div class="three-column">
+      {% for playlist in site.playlists limit:3 %}
+        <div class="card playlist-card stagger-item">
+          <div class="card-header">
+            {% if playlist.image %}
+              <img src="{{ playlist.image | relative_url }}" alt="{{ playlist.title | escape }}">
+            {% else %}
+              <div class="bg-dark" style="height: 100%;"></div>
+            {% endif %}
+            <div class="playlist-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            </div>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">
+              <a href="{{ playlist.url | relative_url }}">{{ playlist.title | escape }}</a>
+            </h3>
+            <div class="card-meta">
+              <div class="meta-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+                {{ playlist.tracks | default: "Various" }} tracks
+              </div>
+            </div>
+            <div class="card-excerpt">
+              {{ playlist.excerpt | strip_html | truncatewords: 15 }}
+            </div>
+            <div class="card-footer">
+              <a href="{{ playlist.url | relative_url }}" class="read-more">
+                view playlist
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{{ content }}
