@@ -56,12 +56,18 @@ layout: default
       {% if page.image %}
       <div class="post-featured-image">
         {% if page.image.path %}
-        <a href="{{ page.image.path | relative_url }}" class="image-popup" title="{{ page.image.alt | default: page.title | escape }}">
-          <img src="{{ page.image.path | relative_url }}" alt="{{ page.image.alt | default: page.title | escape }}" itemprop="image">
-        </a>
+          {% if page.image.relative == false %}
+          <a href="{{ page.image.path }}" class="image-popup" title="{{ page.image.alt | default: page.title | escape }}">
+            <img src="{{ page.image.path }}" alt="{{ page.image.alt | default: page.title | escape }}" itemprop="image">
+          </a>
+          {% else %}
+          <a href="{{ page.image.path | relative_url }}" class="image-popup" title="{{ page.image.alt | default: page.title | escape }}">
+            <img src="{{ page.image.path | relative_url }}" alt="{{ page.image.alt | default: page.title | escape }}" itemprop="image">
+          </a>
+          {% endif %}
         {% else %}
-        <a href="{{ page.image | relative_url }}" class="image-popup" title="{{ page.title | escape }}">
-          <img src="{{ page.image | relative_url }}" alt="{{ page.title | escape }}" itemprop="image">
+        <a href="{{ page.image | relative_url }}" class="image-popup" title="{{ page.image_alt | default: page.title | escape }}">
+          <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title | escape }}" itemprop="image">
         </a>
         {% endif %}
       </div>

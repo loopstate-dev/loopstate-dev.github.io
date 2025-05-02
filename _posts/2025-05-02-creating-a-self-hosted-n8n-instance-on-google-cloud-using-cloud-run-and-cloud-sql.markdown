@@ -4,9 +4,8 @@ title: "Creating a Self-Hosted n8n Instance on Google Cloud Using Cloud Run and 
 date: 2025-05-02 12:00:00 -0500
 categories: [cloud, automation, devops]
 tags: [n8n, google-cloud, cloud-run, cloud-sql, terraform, automation]
-image: 
-  path: /assets/images/posts/n8n-gcp-header.png
-  alt: "n8n on Google Cloud"
+image: /assets/images/posts/n8n-gcp-header.png
+image_alt: "n8n on Google Cloud"
 description: "A step-by-step guide on setting up a self-hosted n8n workflow automation platform using Google Cloud Run and Cloud SQL for optimal performance and control."
 ---
 

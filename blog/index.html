@@ -32,7 +32,11 @@ title: blog
           {% if post.image %}
           <div class="card-image">
             <a href="{{ post.url | relative_url }}">
-              <img src="{{ post.image | relative_url }}" alt="{{ post.title | escape }}">
+              {% if post.image.path %}
+                <img src="{{ post.image.path | relative_url }}" alt="{{ post.image.alt | default: post.title | escape }}">
+              {% else %}
+                <img src="{{ post.image | relative_url }}" alt="{{ post.image_alt | default: post.title | escape }}">
+              {% endif %}
             </a>
           </div>
           {% endif %}
