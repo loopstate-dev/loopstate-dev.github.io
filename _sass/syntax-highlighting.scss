@@ -1,0 +1,87 @@
+// Syntax highlighting styles for code blocks
+// Based on the Github style
+
+.highlight {
+  background: #f8f8f8;
+  border-radius: 4px;
+  margin: 1.5em 0;
+  overflow-x: auto;
+  border: 1px solid #e8e8e8;
+  
+  pre {
+    padding: 1rem;
+    margin: 0;
+    line-height: 1.5;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+    font-size: 0.9em;
+    background: transparent;
+    border: none;
+    overflow-x: auto;
+    white-space: pre;
+    word-wrap: normal;
+    color: #333;
+  }
+  
+  code {
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+    background: transparent;
+    color: #333;
+  }
+
+  // Line numbers
+  .lineno {
+    color: #999;
+    display: inline-block;
+    padding: 0 0.5em 0 0;
+    margin-right: 0.5em;
+    border-right: 1px solid #eee;
+    user-select: none;
+  }
+
+  // Token colors - simplified, higher contrast version
+  .c, .c1, .cm { color: #6a737d; } // Comment
+  .err { color: #d73a49; } // Error
+  .k { color: #d73a49; } // Keyword
+  .o { color: #005cc5; } // Operator
+  .cp { color: #6a737d; } // Comment.Preproc
+  .cs { color: #6a737d; } // Comment.Special
+  .gd { color: #b31d28; background-color: #ffeef0; } // Generic.Deleted
+  .ge { font-style: italic; } // Generic.Emph
+  .gr { color: #b31d28; } // Generic.Error
+  .gh { color: #005cc5; } // Generic.Heading
+  .gi { color: #22863a; background-color: #f0fff4; } // Generic.Inserted
+  .go { color: #333; } // Generic.Output
+  .gp { color: #6a737d; } // Generic.Prompt
+  .gs { font-weight: bold; } // Generic.Strong
+  .gu { color: #6a737d; } // Generic.Subheading
+  .gt { color: #b31d28; } // Generic.Traceback
+  .kc, .kd, .kn, .kp, .kr { color: #d73a49; } // Keyword variations
+  .kt { color: #d73a49; } // Keyword.Type
+  .m, .mf, .mh, .mi, .mo { color: #005cc5; } // Number variations
+  .s, .sb, .sc, .sd, .s2, .se, .sh, .si, .sx, .sr, .s1, .ss { color: #032f62; } // String variations
+  .na { color: #005cc5; } // Name.Attribute
+  .nb { color: #005cc5; } // Name.Builtin
+  .nc { color: #e36209; } // Name.Class
+  .no { color: #005cc5; } // Name.Constant
+  .nd { color: #6f42c1; } // Name.Decorator
+  .ni { color: #005cc5; } // Name.Entity
+  .ne { color: #e36209; } // Name.Exception
+  .nf { color: #6f42c1; } // Name.Function
+  .nl { color: #005cc5; } // Name.Label
+  .nn { color: #6f42c1; } // Name.Namespace
+  .nt { color: #22863a; } // Name.Tag
+  .nv { color: #24292e; } // Name.Variable
+  .ow { color: #d73a49; } // Operator.Word
+  .w { color: #bbbbbb; } // Text.Whitespace
+  .bp { color: #005cc5; } // Name.Builtin.Pseudo
+  .vc, .vg, .vi { color: #24292e; } // Name.Variable variations
+  .il { color: #005cc5; } // Literal.Number.Integer.Long
+  
+  // Terraform HCL-specific highlighting with higher contrast colors
+  .language-hcl {
+    .o { color: #24292e; } // Operators
+    .nv { color: #22863a; } // Variable names
+    .s { color: #032f62; } // Strings
+    .k { color: #d73a49; } // Keywords
+  }
+}
