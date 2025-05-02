@@ -1,25 +1,76 @@
 ---
+layout: default
+title: "404: Page not found"
 permalink: /404.html
-layout: page
 ---
 
-<style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
+<div class="container">
+  <div class="error-page text-center">
+    <h1 class="error-code">404</h1>
+    <div class="error-text">
+      <div5 class="text-gradient">page not found.</div>
+      <p>looks like you've entered a loop that doesn't exist.</p>
+      <div class="error-animation">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="spin">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M12 2a10 10 0 0 0-9 5.7"></path>
+        </svg>
+      </div>
+      <p>let's get you back in the flow.</p>
+      <div class="mt-lg">
+        <a href="{{ site.baseurl }}/" class="hero-btn primary">back to home</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .error-page {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
   }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
+  
+  .error-code {
+    font-size: 120px;
     line-height: 1;
-    letter-spacing: -1px;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #4F46E5, #8B5CF6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .error-text {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .error-text .text-gradient {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .error-animation {
+    margin: 2rem 0;
+  }
+  
+  .spin {
+    animation: spin 4s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 </style>
-
-<div class="container">
-  <h1>404</h1>
-
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
