@@ -368,6 +368,36 @@
       margin: $spacing-lg 0;
     }
   }
+
+  // Improved code block styling
+  pre.highlight, .highlight pre {
+    background-color: #f6f8fa;
+    border: 1px solid #ddd;
+    padding: 16px;
+    overflow-x: auto;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 14px;
+  }
+
+  code {
+    font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 0.9em;
+    padding: 0.2em 0.4em;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 3px;
+  }
+
+  pre code {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    font-size: 14px;
+    word-break: normal;
+    white-space: pre;
+    word-wrap: normal;
+    overflow-x: auto;
+  }
 }
 
 // Pagination

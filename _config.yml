@@ -29,6 +29,15 @@ social:
 
 # Build settings
 markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
+      start_line: 1
+    default_lang: text
+    css_class: 'highlight'
 theme: minima
 plugins:
   - jekyll-feed

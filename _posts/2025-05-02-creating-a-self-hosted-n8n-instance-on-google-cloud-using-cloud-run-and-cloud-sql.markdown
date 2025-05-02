@@ -43,65 +43,67 @@ I utilized Cloud SQL to handle the database requirements for my n8n instance. No
 
 2. **Setting up Cloud SQL**
    - I used Terraform to configure the Cloud SQL instance as follows:
-   ```hcl
-   resource "google_sql_database_instance" "n8n_db_instance" {
-     name             = "${var.cloud_run_service_name}-db"
-     project          = var.gcp_project_id
-     region           = var.gcp_region
-     database_version = "POSTGRES_13"
-     settings {
-       tier              = var.db_tier
-       availability_type = "ZONAL"
-       disk_type         = "PD_HDD"
-       disk_size         = var.db_storage_size
-     }
-     deletion_protection = false
-     depends_on          = [google_project_service.sqladmin]
-   }
 
-   resource "google_sql_database" "n8n_database" {
-     name     = var.db_name
-     instance = google_sql_database_instance.n8n_db_instance.name
-     project  = var.gcp_project_id
-   }
-   ```
+```hcl
+resource "google_sql_database_instance" "n8n_db_instance" {
+  name             = "${var.cloud_run_service_name}-db"
+  project          = var.gcp_project_id
+  region           = var.gcp_region
+  database_version = "POSTGRES_13"
+  settings {
+    tier              = var.db_tier
+    availability_type = "ZONAL"
+    disk_type         = "PD_HDD"
+    disk_size         = var.db_storage_size
+  }
+  deletion_protection = false
+  depends_on          = [google_project_service.sqladmin]
+}
+
+resource "google_sql_database" "n8n_database" {
+  name     = var.db_name
+  instance = google_sql_database_instance.n8n_db_instance.name
+  project  = var.gcp_project_id
+}
+```
 
 3. **Configuring Cloud Run**
    - Next, I deployed the n8n application using Terraform with the following configuration:
-   ```hcl
-   locals {
-     n8n_image_name = "${var.gcp_region}-docker.pkg.dev/${var.gcp_project_id}/${var.artifact_repo_name}/${var.cloud_run_service_name}:latest"
-     service_url    = "https://${var.cloud_run_service_name}-${google_project_service.run.project}.run.app"
-   }
 
-   resource "google_cloud_run_v2_service" "n8n" {
-     name     = var.cloud_run_service_name
-     location = var.gcp_region
-     project  = var.gcp_project_id
+```hcl
+locals {
+  n8n_image_name = "${var.gcp_region}-docker.pkg.dev/${var.gcp_project_id}/${var.artifact_repo_name}/${var.cloud_run_service_name}:latest"
+  service_url    = "https://${var.cloud_run_service_name}-${google_project_service.run.project}.run.app"
+}
 
-     ingress             = "INGRESS_TRAFFIC_ALL"
-     deletion_protection = false
-   }
+resource "google_cloud_run_v2_service" "n8n" {
+  name     = var.cloud_run_service_name
+  location = var.gcp_region
+  project  = var.gcp_project_id
 
-   resource "google_cloud_run_service_iam_member" "n8n_public_invoker" {
-     project  = google_cloud_run_v2_service.n8n.project
-     location = google_cloud_run_v2_service.n8n.location
-     name     = google_cloud_run_v2_service.n8n.name
-     role     = "roles/run.invoker"
-     member   = "allUsers"
-   }
+  ingress             = "INGRESS_TRAFFIC_ALL"
+  deletion_protection = false
+}
 
-   resource "google_cloud_run_domain_mapping" "n8n" {
-     name     = "n8n.loopstate.dev"
-     location = google_cloud_run_v2_service.n8n.location
-     metadata {
-       namespace = data.google_project.project.project_id
-     }
-     spec {
-       route_name = google_cloud_run_v2_service.n8n.name
-     }
-   }
-   ```
+resource "google_cloud_run_service_iam_member" "n8n_public_invoker" {
+  project  = google_cloud_run_v2_service.n8n.project
+  location = google_cloud_run_v2_service.n8n.location
+  name     = google_cloud_run_v2_service.n8n.name
+  role     = "roles/run.invoker"
+  member   = "allUsers"
+}
+
+resource "google_cloud_run_domain_mapping" "n8n" {
+  name     = "n8n.loopstate.dev"
+  location = google_cloud_run_v2_service.n8n.location
+  metadata {
+    namespace = data.google_project.project.project_id
+  }
+  spec {
+    route_name = google_cloud_run_v2_service.n8n.name
+  }
+}
+```
 
 4. **Deploying n8n**
    - I completed the entire deployment process using Terraform, ensuring all resources were provisioned and configured as needed.
