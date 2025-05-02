@@ -1,26 +1,19 @@
 ---
 layout: default
-title: "Blog"
+title: blog
+permalink: /blog-overview/
+redirect_to: /blog/
 ---
 
-<section class="blog-index">
-  <h1>Blog</h1>
-  <ul>
-    {% for post in paginator.posts %}
-      <li>
-        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-        <p>{{ post.excerpt }}</p>
-        <p><small>{{ post.date | date: "%B %d, %Y" }} • {{ post.reading_time }} min read</small></p>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <nav class="pagination">
-    {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path }}">&laquo; Previous</a>
-    {% endif %}
-    {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path }}">Next &raquo;</a>
-    {% endif %}
-  </nav>
-</section>
+<div class="content-wrapper">
+  <div class="container">
+    <header class="page-header">
+      <h1 class="page-title">{{ page.title }}</h1>
+      <p class="subtitle">Redirecting to blog...</p>
+    </header>
+    
+    <script>
+      window.location.href = "{{ '/blog/' | relative_url }}";
+    </script>
+  </div>
+</div>

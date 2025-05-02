@@ -1,0 +1,222 @@
+// Responsive styles for mobile-first design
+
+// Base mobile-friendly styles are already in the component files
+// This file contains specific responsive adjustments
+
+// Mobile styles (default)
+html {
+  font-size: 15px;
+}
+
+// Small screens
+@media (min-width: $breakpoint-sm) {
+  html {
+    font-size: 15px;
+  }
+}
+
+// Medium screens
+@media (min-width: $breakpoint-md) {
+  html {
+    font-size: 16px;
+  }
+  
+  .site-title {
+    font-size: $font-size-2xl;
+  }
+  
+  .mobile-only {
+    display: none;
+  }
+}
+
+// Large screens
+@media (min-width: $breakpoint-lg) {
+  .hero {
+    padding: $spacing-3xl 0;
+  }
+}
+
+// Extra large screens
+@media (min-width: $breakpoint-xl) {
+}
+
+// Mobile only
+@media (max-width: $breakpoint-md - 1px) {
+  .desktop-only {
+    display: none;
+  }
+}
+
+// Responsive styles
+
+// Common responsive container
+.container {
+  width: 100%;
+  padding-left: $spacing-md;
+  padding-right: $spacing-md;
+  margin-left: auto;
+  margin-right: auto;
+  
+  @media (min-width: $breakpoint-sm) {
+    max-width: 540px;
+  }
+  
+  @media (min-width: $breakpoint-md) {
+    max-width: 720px;
+  }
+  
+  @media (min-width: $breakpoint-lg) {
+    max-width: 960px;
+  }
+  
+  @media (min-width: $breakpoint-xl) {
+    max-width: 1140px;
+  }
+  
+  @media (min-width: $breakpoint-2xl) {
+    max-width: 1320px;
+  }
+}
+
+// Responsive grid layouts
+.three-column {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-xl;
+  
+  @media (min-width: $breakpoint-sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (min-width: $breakpoint-lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.two-column {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-xl;
+  
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// Mobile navigation
+@media (max-width: $breakpoint-md - 1px) {
+  .nav-menu {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: calc(100vh - 70px);
+    background-color: $color-light;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: $spacing-xl;
+    transition: $transition-normal;
+    box-shadow: $shadow-xl;
+    z-index: $z-fixed;
+    
+    .dark-mode & {
+      background-color: lighten($color-dark, 3%);
+    }
+    
+    &.active {
+      right: 0;
+    }
+    
+    .nav-item {
+      width: 100%;
+      padding: $spacing-sm 0;
+      
+      a {
+        width: 100%;
+        padding: $spacing-md 0;
+      }
+    }
+    
+    .theme-toggle {
+      margin-top: $spacing-xl;
+      margin-left: 0;
+    }
+  }
+  
+  .menu-toggle {
+    display: flex;
+    
+    &.active {
+      span {
+        &:nth-child(1) {
+          transform: rotate(45deg) translate(5px, 5px);
+        }
+        
+        &:nth-child(2) {
+          opacity: 0;
+        }
+        
+        &:nth-child(3) {
+          transform: rotate(-45deg) translate(5px, -5px);
+        }
+      }
+    }
+  }
+}
+
+// Responsive typography
+@media (max-width: $breakpoint-md - 1px) {
+  h1, .h1 {
+    font-size: $font-size-3xl;
+  }
+  
+  h2, .h2 {
+    font-size: $font-size-2xl;
+  }
+  
+  h3, .h3 {
+    font-size: $font-size-xl;
+  }
+  
+  .hero-title {
+    font-size: $font-size-3xl;
+  }
+  
+  .section {
+    padding: $spacing-xl 0;
+  }
+  
+  .post-title {
+    font-size: $font-size-3xl;
+  }
+}
+
+// Responsive footer
+@media (max-width: $breakpoint-lg - 1px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    
+    > div {
+      margin-bottom: $spacing-xl;
+    }
+    
+    .footer-social .social-links {
+      justify-content: center;
+    }
+  }
+}
+
+// Responsive blog page
+@media (max-width: $breakpoint-md - 1px) {
+  .post-navigation {
+    grid-template-columns: 1fr;
+    
+    .post-nav-item.next {
+      text-align: left;
+      margin-top: $spacing-md;
+    }
+  }
+}

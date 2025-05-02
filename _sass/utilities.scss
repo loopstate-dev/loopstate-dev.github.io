@@ -1,0 +1,147 @@
+// Utility classes
+
+// Container
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $spacing-md;
+  padding-right: $spacing-md;
+  
+  @media (min-width: $breakpoint-md) {
+    padding-left: $spacing-lg;
+    padding-right: $spacing-lg;
+  }
+}
+
+// Spacing utilities
+@each $name, $size in (
+  'xs': $spacing-xs,
+  'sm': $spacing-sm,
+  'md': $spacing-md,
+  'lg': $spacing-lg,
+  'xl': $spacing-xl,
+  '2xl': $spacing-2xl,
+  '3xl': $spacing-3xl
+) {
+  .mt-#{$name} { margin-top: $size; }
+  .mb-#{$name} { margin-bottom: $size; }
+  .ml-#{$name} { margin-left: $size; }
+  .mr-#{$name} { margin-right: $size; }
+  .mx-#{$name} { 
+    margin-left: $size; 
+    margin-right: $size; 
+  }
+  .my-#{$name} { 
+    margin-top: $size; 
+    margin-bottom: $size; 
+  }
+  .m-#{$name} { margin: $size; }
+  
+  .pt-#{$name} { padding-top: $size; }
+  .pb-#{$name} { padding-bottom: $size; }
+  .pl-#{$name} { padding-left: $size; }
+  .pr-#{$name} { padding-right: $size; }
+  .px-#{$name} { 
+    padding-left: $size; 
+    padding-right: $size; 
+  }
+  .py-#{$name} { 
+    padding-top: $size; 
+    padding-bottom: $size; 
+  }
+  .p-#{$name} { padding: $size; }
+}
+
+// Text utilities
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.text-primary { color: $color-primary; }
+.text-secondary { color: $color-secondary; }
+.text-dark { color: $color-dark; }
+.text-light { color: $color-light; }
+.text-gray { color: $color-gray; }
+
+.fw-normal { font-weight: 400; }
+.fw-medium { font-weight: 500; }
+.fw-semibold { font-weight: 600; }
+.fw-bold { font-weight: 700; }
+
+.fs-xs { font-size: $font-size-xs; }
+.fs-sm { font-size: $font-size-sm; }
+.fs-base { font-size: $font-size-base; }
+.fs-lg { font-size: $font-size-lg; }
+.fs-xl { font-size: $font-size-xl; }
+.fs-2xl { font-size: $font-size-2xl; }
+.fs-3xl { font-size: $font-size-3xl; }
+.fs-4xl { font-size: $font-size-4xl; }
+.fs-5xl { font-size: $font-size-5xl; }
+
+// Display utilities
+.d-none { display: none; }
+.d-block { display: block; }
+.d-inline { display: inline; }
+.d-inline-block { display: inline-block; }
+.d-flex { display: flex; }
+.d-grid { display: grid; }
+
+// Flex utilities
+.flex-row { flex-direction: row; }
+.flex-column { flex-direction: column; }
+.flex-wrap { flex-wrap: wrap; }
+.flex-nowrap { flex-wrap: nowrap; }
+
+.justify-start { justify-content: flex-start; }
+.justify-end { justify-content: flex-end; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.justify-around { justify-content: space-around; }
+.justify-evenly { justify-content: space-evenly; }
+
+.align-start { align-items: flex-start; }
+.align-end { align-items: flex-end; }
+.align-center { align-items: center; }
+.align-baseline { align-items: baseline; }
+.align-stretch { align-items: stretch; }
+
+// Responsive visibility
+@media (max-width: $breakpoint-md - 1px) {
+  .hide-sm { display: none !important; }
+}
+
+@media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg - 1px) {
+  .hide-md { display: none !important; }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .hide-lg { display: none !important; }
+}
+
+// Misc utilities
+.w-full { width: 100%; }
+.h-full { height: 100%; }
+
+.rounded-sm { border-radius: $border-radius-sm; }
+.rounded-md { border-radius: $border-radius-md; }
+.rounded-lg { border-radius: $border-radius-lg; }
+.rounded-full { border-radius: $border-radius-full; }
+
+.shadow-sm { box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); }
+.shadow-md { box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+.shadow-lg { box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); }
+
+.bg-primary { background-color: $color-primary; }
+.bg-secondary { background-color: $color-secondary; }
+.bg-light { background-color: $color-light; }
+.bg-dark { background-color: $color-dark; }
+
+.opacity-25 { opacity: 0.25; }
+.opacity-50 { opacity: 0.5; }
+.opacity-75 { opacity: 0.75; }
+
+.position-relative { position: relative; }
+.position-absolute { position: absolute; }
+.position-fixed { position: fixed; }

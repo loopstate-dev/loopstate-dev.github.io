@@ -1,0 +1,162 @@
+// Base styles
+
+// Reset
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: $font-family-sans;
+  font-size: $font-size-base;
+  line-height: 1.6;
+  color: $color-dark;
+  background-color: $color-light;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+// Links
+a {
+  color: $color-primary;
+  text-decoration: none;
+  transition: $transition-fast;
+  
+  &:hover {
+    color: darken($color-primary, 10%);
+  }
+}
+
+// Images
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  object-fit: cover;
+}
+
+// Lists
+ul, ol {
+  list-style-position: inside;
+}
+
+// Code blocks
+pre, code {
+  font-family: $font-family-mono;
+  font-size: 0.9em;
+  border-radius: $border-radius-md;
+  background: rgba($color-gray, 0.1);
+}
+
+pre {
+  padding: $spacing-md;
+  overflow-x: auto;
+  margin: $spacing-lg 0;
+  
+  code {
+    background: transparent;
+    padding: 0;
+  }
+}
+
+code {
+  padding: $spacing-xs $spacing-sm;
+}
+
+// Tables
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: $spacing-lg 0;
+}
+
+th, td {
+  padding: $spacing-sm $spacing-md;
+  border: 1px solid $color-light-gray;
+  text-align: left;
+}
+
+th {
+  background-color: rgba($color-primary-r, $color-primary-g, $color-primary-b, 0.05);
+  font-weight: 600;
+}
+
+// Blockquotes
+blockquote {
+  border-left: 4px solid $color-primary;
+  padding-left: $spacing-md;
+  margin: $spacing-lg 0;
+  font-style: italic;
+  color: $color-gray;
+}
+
+// Horizontal rule
+hr {
+  border: 0;
+  height: 1px;
+  background: $color-light-gray;
+  margin: $spacing-xl 0;
+}
+
+// Form elements
+input, textarea, select, button {
+  font-family: $font-family-sans;
+  font-size: $font-size-base;
+  border-radius: $border-radius-md;
+  outline: none;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: $spacing-sm $spacing-md;
+  border: 1px solid $color-light-gray;
+  
+  &:focus {
+    border-color: $color-primary;
+    box-shadow: 0 0 0 3px rgba($color-primary-r, $color-primary-g, $color-primary-b, 0.2);
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+// Tags
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: $border-radius-full;
+  background-color: rgba($color-primary-r, $color-primary-g, $color-primary-b, 0.1);
+  color: $color-primary;
+  font-size: $font-size-sm;
+  font-weight: 500;
+  transition: $transition-fast;
+  
+  &:hover {
+    background-color: rgba($color-primary-r, $color-primary-g, $color-primary-b, 0.2);
+  }
+}
+
+// Text gradients
+.text-gradient {
+  background: linear-gradient(135deg, $color-primary, $color-secondary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+}
+
+// Main content area
+.main-content {
+  min-height: calc(100vh - 220px); // Adjust based on header/footer height
+  padding-top: 70px; // Height of fixed header
+}

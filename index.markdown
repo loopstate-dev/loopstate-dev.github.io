@@ -1,6 +1,5 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: home
+title: loopstate.dev
+description: Welcome to loopstate.dev, where I share thoughts on DevOps, coding, music, and creative tech. Let's make something awesome together.
 ---

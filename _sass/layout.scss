@@ -1,0 +1,100 @@
+// Main layout structures
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+}
+
+header {
+  padding: $spacing-md 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba($color-light, 0.98);
+  backdrop-filter: blur(8px);
+  transition: $transition-normal;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+  .dark-mode & {
+    background-color: rgba($color-dark, 0.98);
+  }
+}
+
+footer {
+  background-color: $color-dark;
+  color: $color-light;
+  padding: $spacing-xl 0;
+  
+  a {
+    color: rgba($color-light, 0.8);
+    
+    &:hover {
+      color: $color-light;
+    }
+  }
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+  
+  @media (min-width: $breakpoint-md) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.footer-menu {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: $spacing-sm;
+}
+
+.footer-nav,
+.footer-social,
+.footer-copyright {
+  margin-bottom: $spacing-md;
+  
+  @media (min-width: $breakpoint-md) {
+    margin-bottom: 0;
+  }
+}
+
+.two-column {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-xl;
+  
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.three-column {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-lg;
+  
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.content-wrapper {
+  padding: $spacing-xl 0;
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  
+  @media (min-width: $breakpoint-md) {
+    padding: $spacing-2xl 0;
+  }
+}

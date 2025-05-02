@@ -1,0 +1,25 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@charset "utf-8";
+
+// Import variables first
+@import "variables";
+
+// Base styles
+@import "base";
+@import "typography";
+@import "layout";
+@import "navigation";
+@import "hero";
+@import "cards";
+@import "posts";
+@import "utilities";
+
+// Components
+@import "animations";
+@import "dark-mode";
+
+// Responsive styles - should be last
+@import "responsive";
