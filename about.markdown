@@ -5,7 +5,7 @@ permalink: /about/
 order: 1
 ---
 
-## Hey, I'm glad you're here.
+## Hey, I'm glad you're here!
 
 **loopstate.dev** is my personal space where code, creativity, and curiosity all intersect. I'm a DevOps Director who loves writing clean infrastructure, automating all the things, and exploring the edges of developer productivity — whether it's through tools, workflows, or mindset.
 
