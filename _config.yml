@@ -13,49 +13,44 @@
 # https://learnxinyminutes.com/docs/yaml/
 #
 # Site settings
-# Update these values to customize your site
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
 
-title: "loopstate.dev"
-description: "Code. Flow. Repeat."
+
+email: cmcfee@kent.edu
+title: loopstate.dev
+tagline: Code. Flow. Repeat. 
+description: >
+  Welcome to loopstate.dev, a creative space where DevOps engineering, clean code, music-fueled flow states, and gaming culture intersect. Run by a DevOps Director with a passion for automation, cloud systems, and creative tech, this site shares insights through blog posts, tools, and short-form videos designed to inspire and connect. Whether you're shipping to prod or syncing to a new playlist, you're in the loop.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://loopstate.dev" # the base hostname & protocol for your site
-
-# Author settings
-author:
-  name: "Your Name"
-  email: "your.email@example.com"
-  social:
-    github: "https://github.com/yourusername"
-    youtube: "https://youtube.com/yourchannel"
-    tiktok: "https://tiktok.com/@yourusername"
-    linkedin: "https://linkedin.com/in/yourusername"
-
-# Theme settings
-paginate: 5 # Number of posts per page
-permalink: /:categories/:title/
-markdown: kramdown
-highlighter: rouge
-
-# Plugins
-plugins:
-  - jekyll-paginate
-  - jekyll-seo-tag
-
-# Defaults
-defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-      author: "Your Name"
-
-# Exclude from processing
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+# twitter_username: jekyllrb
+github_username:  mickfeech
 
 # Build settings
-future: true
+theme: minima
+plugins:
+  - jekyll-feed
+sass:
+  style: compressed
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
