@@ -53,6 +53,20 @@ layout: default
         {% endif %}
       </header>
 
+      {% if page.image %}
+      <div class="post-featured-image">
+        {% if page.image.path %}
+        <a href="{{ page.image.path | relative_url }}" class="image-popup" title="{{ page.image.alt | default: page.title | escape }}">
+          <img src="{{ page.image.path | relative_url }}" alt="{{ page.image.alt | default: page.title | escape }}" itemprop="image">
+        </a>
+        {% else %}
+        <a href="{{ page.image | relative_url }}" class="image-popup" title="{{ page.title | escape }}">
+          <img src="{{ page.image | relative_url }}" alt="{{ page.title | escape }}" itemprop="image">
+        </a>
+        {% endif %}
+      </div>
+      {% endif %}
+
       <div class="post-content e-content" itemprop="articleBody">
         {{ content }}
       </div>

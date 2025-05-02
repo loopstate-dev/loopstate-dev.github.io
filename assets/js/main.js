@@ -20,6 +20,9 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Initialize blog tag filters
   initTagFilters();
+  
+  // Initialize image lightbox functionality
+  initImageLightbox();
 });
 
 /**
@@ -205,5 +208,69 @@ function initTagFilters() {
         });
       });
     });
+  }
+}
+
+/**
+ * Initialize lightbox functionality for images
+ */
+function initImageLightbox() {
+  // Create lightbox elements
+  const lightbox = document.createElement('div');
+  lightbox.className = 'lightbox';
+  lightbox.innerHTML = `
+    <div class="lightbox-content">
+      <button class="lightbox-close">&times;</button>
+      <img class="lightbox-image" src="" alt="">
+    </div>
+  `;
+  document.body.appendChild(lightbox);
+
+  // Get lightbox elements
+  const lightboxImage = lightbox.querySelector('.lightbox-image');
+  const lightboxClose = lightbox.querySelector('.lightbox-close');
+  
+  // Add click event to all image-popup links
+  document.querySelectorAll('.image-popup').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      // Set the image source and show the lightbox
+      const imgSrc = this.getAttribute('href');
+      const imgTitle = this.getAttribute('title') || '';
+      
+      lightboxImage.src = imgSrc;
+      lightboxImage.alt = imgTitle;
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Prevent scrolling while lightbox is open
+    });
+  });
+  
+  // Close lightbox when clicking the close button
+  lightboxClose.addEventListener('click', closeLightbox);
+  
+  // Also close when clicking the background
+  lightbox.addEventListener('click', function(e) {
+    if (e.target === lightbox) {
+      closeLightbox();
+    }
+  });
+  
+  // Close on escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+      closeLightbox();
+    }
+  });
+  
+  // Function to close lightbox
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+    
+    // Clear the image src after transition
+    setTimeout(() => {
+      lightboxImage.src = '';
+    }, 300);
   }
 }

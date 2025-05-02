@@ -16,9 +16,9 @@ favicon: /assets/images/loopstate-icon.png
 dark_mode: false # dark mode by default?
 
 # SEO settings
-twitter:
-  username: loopstatedev
-  card: summary_large_image
+#twitter:
+#  username: loopstatedev
+#  card: summary_large_image
 
 # Social links for the site
 social:

@@ -118,6 +118,70 @@
   }
 }
 
+// Post featured image
+.post-featured-image {
+  margin: 0 auto $spacing-2xl;
+  max-width: 800px; // Match content width
+  background-color: rgba(0, 0, 0, 0.02);
+  padding: $spacing-md;
+  border-radius: $border-radius-md;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center; // Center any image smaller than container
+  aspect-ratio: 16 / 9; // Make the container rectangular with 16:9 aspect ratio
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  
+  .dark-mode & {
+    background-color: rgba(255, 255, 255, 0.02);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .image-popup {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: zoom-in;
+    transition: all 0.3s ease;
+    
+    &:hover::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0,0,0,0.1);
+      z-index: 1;
+    }
+    
+    &:hover::before {
+      content: '🔍';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 24px;
+      z-index: 2;
+      opacity: 0.8;
+    }
+  }
+  
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    width: auto;
+    object-fit: contain; // Preserve aspect ratio
+    display: block;
+    margin: 0 auto;
+    border-radius: $border-radius-sm;
+  }
+}
+
 .post-navigation {
   display: grid;
   grid-template-columns: 1fr 1fr;
