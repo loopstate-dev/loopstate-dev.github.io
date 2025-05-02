@@ -18,21 +18,39 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-
 email: cmcfee@kent.edu
-title: loopstate.dev
-tagline: Code. Flow. Repeat. 
+title: "loopstate.dev"
+tagline: "Code. Flow. Repeat."
 description: >
-  Welcome to loopstate.dev, a creative space where DevOps engineering, clean code, music-fueled flow states, and gaming culture intersect. Run by a DevOps Director with a passion for automation, cloud systems, and creative tech, this site shares insights through blog posts, tools, and short-form videos designed to inspire and connect. Whether you're shipping to prod or syncing to a new playlist, you're in the loop.
+  A modern, responsive personal website blending tech, creativity, and personal branding.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://loopstate.dev" # the base hostname & protocol for your site
 # twitter_username: jekyllrb
 github_username:  mickfeech
 
+# Author settings
+author:
+  name: "DevOps Director"
+  email: ""
+  social:
+    github: "https://github.com/loopstate"
+    youtube: "https://youtube.com/loopstate"
+    tiktok: "https://tiktok.com/@loopstate"
+    linkedin: "https://linkedin.com/in/loopstate"
+
+# Theme settings
+paginate: 5 # Number of posts per page
+plugins:
+  - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-archives
+
 # Build settings
 theme: minima
-plugins:
-  - jekyll-feed
+markdown: kramdown
+highlighter: rouge
 sass:
   style: compressed
 # Exclude from processing.
