@@ -10,6 +10,7 @@ url: "https://loopstate.dev" # the base hostname & protocol
 logo: /assets/images/loopstate-icon.png
 tagline: code. flow. repeat.
 author: Chris McFee
+future: true  # Allow future dated posts to be published
 
 # Theme settings
 favicon: /assets/images/loopstate-icon.png
