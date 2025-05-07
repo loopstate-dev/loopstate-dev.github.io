@@ -1,3 +1,14 @@
+---
+layout: post
+title: "Automating My Coaching Life with n8n"
+date: 2025-05-07 10:00:00 -0500
+categories: [automation, personal]
+tags: [n8n, coaching, soccer, workflow, automation]
+image: /assets/images/posts/n8n-gcp-header.png
+image_alt: "n8n Automation Workflow"
+description: "How I use n8n to automate my soccer coaching responsibilities and streamline my personal workflows for better organization and efficiency."
+---
+
 ## Automating My Coaching Life with n8n
 
 As a coach and proud dad, I’m always trying to find ways to make my life easier and keep things organized. That’s where n8n comes in! I discovered this amazing tool for automation, and let me tell you, it has transformed how I handle my daily tasks.
