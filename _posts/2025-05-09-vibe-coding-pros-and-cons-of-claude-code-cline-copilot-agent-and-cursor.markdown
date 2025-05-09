@@ -1,3 +1,14 @@
+---
+layout: post
+title: "Vibe Coding: Pros and Cons of Claude Code, Cline, Copilot Agent, and Cursor"
+date: 2025-05-09 14:30:00 -0500
+categories: [development, tools]
+tags: [vibe-coding, claude-code, cline, copilot-agent, cursor, ai-tools]
+description: "An exploration of modern AI coding assistants and how they enhance the 'vibe coding' experience by turning programming into a conversational, creative process."
+image: /assets/images/posts/vibe_coding.jpg
+image_alt: "Vibe coding"
+---
+
 # Vibe Coding: Pros and Cons of Claude Code, Cline, Copilot Agent, and Cursor
 
 In the fast-evolving world of programming, I’ve come to appreciate the concept of vibe coding. This approach emphasizes creativity and productivity, allowing me to engage more deeply with the coding process. The essence of vibe coding lies in its ability to turn coding into a conversational experience, which I believe can be greatly enhanced by utilizing tools like Claude Code, Cline, Copilot Agent, and Cursor. Additionally, turning on dictation features helps me feel as though I’m conversing with my code—allowing for a more dynamic coding experience.
