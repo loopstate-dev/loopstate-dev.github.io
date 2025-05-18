@@ -1,3 +1,12 @@
+---
+layout: post
+title: "AI-Driven Music Playlists with OpenAI and Spotify"
+date: 2025-05-18 09:00:00 -0500
+categories: [development, ai, music]
+tags: [spotify, openai, flask, python, api, music-generation, ai-playlist]
+description: "A walkthrough of creating a web application that integrates Spotify and OpenAI to generate AI-driven music playlists based on natural language user prompts."
+---
+
 # AI-Driven Music Playlists with OpenAI and Spotify
 
 ## Introduction
@@ -52,9 +61,9 @@ The architecture of my application consists of various components that work harm
 The application’s simple yet effective user interface ensures that users can easily generate their desired playlists with a few clicks and textual inputs.
 
 ## Conclusion
-I invite you to explore this project and experience the fusion of AI and music. Collectively, we're stepping into a new era of music curation driven by artificial intelligence that can enhance our listening experiences.
+I invite you to explore this type of technology and experience the fusion of AI and music. Collectively, we're stepping into a new era of music curation driven by artificial intelligence that can enhance our listening experiences.
 
 ## Future Enhancements
-Looking forward, I aim to add more features such as user recommendations based on listening habits, collaborative playlist functionalities, and support for additional music streaming platforms.
+Looking forward, I aim to add more features such as user recommendations based on listening habits, collaborative playlist functionalities, and support for additional music streaming platforms. Let me know your interest!
 
 ---
