@@ -5,6 +5,8 @@ date: 2025-05-18 09:00:00 -0500
 categories: [development, ai, music]
 tags: [spotify, openai, flask, python, api, music-generation, ai-playlist]
 description: "A walkthrough of creating a web application that integrates Spotify and OpenAI to generate AI-driven music playlists based on natural language user prompts."
+image: /assets/images/posts/genai-playlists.jpg
+image_alt: "GenAI and Spotify"
 ---
 
 # AI-Driven Music Playlists with OpenAI and Spotify
